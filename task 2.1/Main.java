@@ -13,15 +13,30 @@
 
 public class Main {
     public static void main(String[] args) {
-       String a = "Мама";
-       String b = "Мыла";
-       String c = "Раму";
-        System.out.println(a+b+c);
-        System.out.println(a+c+b);
-        System.out.println(b+c+a);
-        System.out.println(b+a+c);
-        System.out.println(c+a+b);
-        System.out.println(c+b+a);
+
+        String [] array={"мама","мыла","раму"};
+        array[0] = String.valueOf(1);
+        array[1] = String.valueOf(2);
+        array[2] = String.valueOf(3);
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3 ; j++) {
+                for (int l = 0; l < 3 ; l++) {
+                    if( (i != j)&&(j != l)&&(i!=l)) {
+                        String result = array[i] + array[j] + array[l];
+                        array[0] = "Мама";
+                        array[1] = "Мыла";
+                        array[2] = "Раму";
+
+                        System.out.println(result);
+                    }
+
+                }
+
+
+            }
+        }
+
         //напишите тут ваш код
 
     }
