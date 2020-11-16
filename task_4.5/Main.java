@@ -17,62 +17,70 @@ public class Main {
     }
 }
 
-    class Animal {
-        String nickname;
-        int age;
-        String type;
+class Animal {
+    String nickname;
+    int age;
+    String type;
 
-        public String getNickname() {
-            return nickname;
-        }
-
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
-        }
-
-        public int getAge() {
-            return age;
-        }
-
-        public void setAge(int age) {
-            this.age = age;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public Animal(String nickname, int age, String type) {
-            this.nickname = nickname;
-            this.age = age;
-            this.type = type;
-        }
+    public String getNickname() {
+        return nickname;
     }
 
-    class Horse extends Animal {
-        public Horse(String nickname, int age, String type) {
-            super(nickname, age, type);
-        }
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
+    public int getAge() {
+        return age;
+    }
 
-        public static void run() {
-            System.out.println("Игого, я поскакала!");
-        }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Animal(String nickname, int age, String type) {
+        this.nickname = nickname;
+        this.age = age;
+        this.type = type;
+    }
+}
+
+class Horse extends Animal {
+    public Horse(String nickname, int age, String type) {
+        super(nickname, age, type);
     }
 
 
-        class Pegasus extends Animal {
-            public Pegasus(String nickname, int age, String type) {
-                super(nickname, age, type);
-            }
+    public static void run() {
+        System.out.println("Игого, я поскакала!");
+    }
+}
 
 
-            public static void fly() {
-                System.out.println("Игого, я полетела!");
-            }
+class Pegasus extends Horse {
+    public Pegasus(String nickname, int age, String type) {
+        super(nickname, age, type);
+    }
 
-        }
+
+    public static void fly() {
+        System.out.println("Игого, я полетела!");
+    }
+
+}
+
+
+
+
+
+
+
+
