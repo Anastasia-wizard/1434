@@ -5,30 +5,14 @@
 // я понимаю, что сделала не верно, но не могу понять, где ошибка!
 public class Main {
     public static void main(String[] args) {
-        int array[] = {2, 7, 8, 3, 1, 12, 5, 0};
-        int a = 5;
-        int count = 0;
-        for (int i = 0; i < array.length; i++) {
-
-            while (a == array[i] ) {
-                System.out.println("да");
-                break;
-            }
-
-
-            if (a != array[i] )
-            {
-                System.out.println("нет");
-               
-
-            }
-
-
-
-            }
-
-
-        }
         //напишите тут ваш код
+        int arr[] = {1,2,5,90,2,40,3,8};
+        boolean flag = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]==5) flag = true;
+        }
+        if (flag) System.out.println("да");
+        else System.out.println("нет"); ;
 
     }
+}
