@@ -31,17 +31,21 @@ public class Main {
         ArrayList<Integer> num = new ArrayList<>();
 
         try {
-            FileReader reader = new FileReader("C:/java/text1.txt");
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Введите путь к файлу");
+
+            String address = sc.nextLine();
+            FileReader reader = new FileReader(address);
             Scanner scan = new Scanner(reader);
             String c = "";
             int a;
 
             while (scan.hasNextLine()){
 
-            c = scan.nextLine();
-            a = Integer.parseInt(c);
-            if (a%2 == 0)  num.add(a);
-            
+                c = scan.nextLine();
+                a = Integer.parseInt(c);
+                if (a%2 == 0)  num.add(a);
+
             }
 
             Collections.sort(num);
@@ -51,4 +55,8 @@ public class Main {
         }
 
     }
-    }
+}
+
+
+
+
