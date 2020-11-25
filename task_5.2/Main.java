@@ -45,7 +45,7 @@ public class Main {
                 System.out.println(entry.getKey());
                 }
             else {
-                System.out.println("Совпадений не найдено.");
+                System.out.println("Данной фамилии нет в списке.");
                 break;
             }
             }
