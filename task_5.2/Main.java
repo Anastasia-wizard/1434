@@ -13,9 +13,9 @@
 Абрамовичи */
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.security.KeyStore;
+import java.sql.SQLOutput;
+import java.util.*;
 
 /*
 Модернизация ПО
@@ -23,31 +23,38 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        Map<Integer, String> adressSurname = new HashMap<>();
+        adressSurname.put(3, "Ивановы");
+        adressSurname.put(13, "Адамсы");
+        adressSurname.put(777, "Фортовые");
+        adressSurname.put(6, "Вало");
+        adressSurname.put(798, "Серениссима");
+        adressSurname.put(376, "Достоевские");
+
+
+
         System.out.println("Введите фамилию");
         Scanner scanner = new Scanner(System.in);
 
-        List<String> list = new ArrayList<>();
-        while (true) {
-            String family = scanner.nextLine();
-            if (family.isEmpty()) {
+
+
+            String surname = scanner.nextLine();
+        for (Map.Entry<Integer, String> entry : adressSurname.entrySet()) {
+            if (entry.getValue().equals(surname)) {
+                System.out.println(entry.getKey());
+                }
+            else {
+                System.out.println("Совпадений не найдено.");
                 break;
             }
-
-            list.add(family);
-        }
-
-        // Read the house number
-        String city = scanner.nextLine();
-
-        for (int i = 0; i < list.size(); i++) {
-
-
-            if (!city.isEmpty()) {
-
-                String familyName = list.get(city.indexOf(i));
-                System.out.println(familyName);
-
             }
         }
-    }
-}
+
+
+        }
+
+
+
+
+
