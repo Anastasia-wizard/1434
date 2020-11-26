@@ -13,47 +13,46 @@
 Абрамовичи */
 
 
-import java.security.KeyStore;
-import java.sql.SQLOutput;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-/*
+/* 
 Модернизация ПО
 */
 
 public class Main {
     public static void main(String[] args) {
-
-        Map<Integer, String> adressSurname = new HashMap<>();
-        adressSurname.put(3, "Ивановы");
-        adressSurname.put(13, "Адамсы");
-        adressSurname.put(777, "Фортовые");
-        adressSurname.put(6, "Вало");
-        adressSurname.put(798, "Серениссима");
-        adressSurname.put(376, "Достоевские");
-
-
-
-        System.out.println("Введите фамилию");
+        List <String> familyList = new ArrayList<>();
+        List <String> sityList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
-
-
-            String surname = scanner.nextLine();
-        for (Map.Entry<Integer, String> entry : adressSurname.entrySet()) {
-            if (entry.getValue().equals(surname)) {
-                System.out.println(entry.getKey());
-                }
-            else {
-                System.out.println("Данной фамилии нет в списке.");
-                break;
-            }
-            }
+        System.out.println("Введите фамилию");
+        while (true) {
+            System.out.print("фамилия " + (int) (familyList.size()+1) + " :");
+            String family = scanner.nextLine();
+            if (family.isEmpty()) break;
+          
+            else familyList.add(family);
         }
 
-
+        System.out.println("введите города \n");
+        while (sityList.size() < familyList.size()) {
+            System.out.print("город " + (int) (sityList.size()+1) +"/" + (int) (familyList.size()+1) + " :");
+            String sity = scanner.nextLine();
+            if (sity.isEmpty()) System.out.println("городов меньше семей, нелюходимо ввести еще " +(int)(familyList.size()-sityList.size()) + " городов");
+            else sityList.add(sity);
         }
 
+        
+        System.out.println("Введите фамилию: " + familyList);
+        String family = scanner.nextLine();
+        int index = familyList.indexOf(family);
+        if (index!=-1) System.out.println(family + ": город " + sityList.get(index));
+        else System.out.println("такой фамилии нет в списке.");
+
+    }
+}
 
 
 
